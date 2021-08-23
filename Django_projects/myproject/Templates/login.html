@@ -207,9 +207,19 @@ $('.login-reg-panel input[type="radio"]').on('change', function() {
 			<div class="login-show">
 				<form action="calculate">
 				<h2>Sum of Two Numbers</h2>
-				<input type="text" name="number1"placeholder="Enter your first number">
-				<input type="text" name ="number2"placeholder="Enter your second number">
-				<input type="submit" value="Calculate"></form>
+					{% if x %}
+				<input type="text" value="{{x}}" name="number1"placeholder="Enter your first number">
+					{% else %}
+					<input type="text" name="number1"placeholder="Enter your first number">
+					{% endif %}
+
+					{% if y %}
+				<input type="text" value="{{y}}" name ="number2"placeholder="Enter your second number">
+					{% else %}
+					<input type="text" name ="number2"placeholder="Enter your second number">
+					{% endif %}
+				<input type="submit" value="Calculate">
+				</form>
 				<a href="">Forgot password?</a>
 			</div>
 			<div class="register-show">

@@ -2,9 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-def home(request):
+def index(request):
     #return HttpResponse("welcome")
-    return render(request,"login.html")
+    return render(request,"index.html")
 
 def pullrequests(request):
     return HttpResponse("Pull Requests")
@@ -13,7 +13,8 @@ def calculate(request):
     x = request.GET['number1']
     y = request.GET['number2']
     z = int(x)+int(y)
-    if z%2==0:
-        return HttpResponse(f"<h1 style = 'color:green'>Calculation View: {x}+{y}={z}</h1>")
-    else:
-        return HttpResponse(f"<h1 style = 'color:red'>Calculation View: {x}+{y}={z}</h1>")
+    # if z%2==0:
+    #     return HttpResponse(f"<h1 style = 'color:green'>Calculation View: {x}+{y}={z}</h1>")
+    # else:
+    #     return HttpResponse(f"<h1 style = 'color:red'>Calculation View: {x}+{y}={z}</h1>")
+    return render(request,"login.html",{"x":x,"y":y,"z":z})

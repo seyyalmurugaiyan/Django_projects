@@ -1,9 +1,9 @@
 from django.urls import path
 
-from .views import home, pullrequests, calculate
+from .views import index, pullrequests, calculate
 
 urlpatterns=[
-    path('',home,name='home'),
+    path('',index,name='index'),
     path('pullrequests/',pullrequests,name="pullrequests"),
     path('calculate',calculate,name="calculate")
 ]
